@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Topic page explaining how web requests and responses work.">
+  <title>Web Servers and HTTP | How It Works</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="branding">
+        <a id="site-title" href="index.html">Web Servers and HTTP</a>
+        <p>Intro to Web Development class project</p>
+      </div>
+      <!-- Main navigation stays consistent on every page -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html" class="active">How It Works</a></li>
+          <li><a href="http-evolution.html">HTTP Evolution</a></li>
+          <li><a href="web-servers.html">Web Servers</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="hero">
+      <p class="small-note">Topic page 1</p>
+      <h1>How the Web Request Process Works</h1>
+      <p class="subhead">When a user opens a website, the browser does not magically know where everything is. It follows a clear process that involves finding the server, asking for resources, and receiving a structured response.</p>
+    </section>
+
+    <section class="two-column">
+      <article class="content-card">
+        <h2>Step by step process</h2>
+        <ol>
+          <li><strong>The user enters a URL.</strong> The browser reads the website address and figures out what resource is being requested.</li>
+          <li><strong>DNS resolves the domain.</strong> The browser uses the Domain Name System to locate the correct server.</li>
+          <li><strong>The browser sends an HTTP request.</strong> This request asks the server for a page, image, stylesheet, script, or another file.</li>
+          <li><strong>The web server processes the request.</strong> It finds the needed content and decides how to respond.</li>
+          <li><strong>The server returns an HTTP response.</strong> The response includes the requested content and information such as a status code.</li>
+          <li><strong>The browser renders the page.</strong> It interprets the HTML and then loads the related CSS, images, and scripts.</li>
+        </ol>
+      </article>
+
+      <figure class="figure-card">
+        <img src="images/request-response.png" alt="Diagram of browser request, DNS lookup, web server processing, and HTTP response.">
+        <figcaption>The browser, DNS, and server each handle part of the request process.</figcaption>
+      </figure>
+    </section>
+
+    <section class="content-card">
+      <h2>What is inside an HTTP request?</h2>
+      <p>An HTTP request normally includes a method, a target resource, and extra details called headers. A method tells the server what the browser wants to do. For example, <code>GET</code> asks for a resource, while <code>POST</code> sends data to the server.</p>
+      <ul>
+        <li><strong>Method:</strong> the action being requested, such as GET</li>
+        <li><strong>URL or path:</strong> the location of the resource</li>
+        <li><strong>Headers:</strong> extra details like accepted content type or browser information</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>What is inside an HTTP response?</h2>
+      <p>The response contains the status of the request and the content the browser needs. If everything works, the server usually returns a success code and the requested file. If something goes wrong, the server sends a different code that explains the problem.</p>
+    </section>
+
+    <section class="table-wrap">
+      <table>
+        <caption>Common status codes</caption>
+        <thead>
+          <tr>
+            <th>Status Code</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>200</td>
+            <td>Success</td>
+            <td>The page was found and returned correctly.</td>
+          </tr>
+          <tr>
+            <td>301</td>
+            <td>Moved permanently</td>
+            <td>The browser is redirected to a new address.</td>
+          </tr>
+          <tr>
+            <td>404</td>
+            <td>Not found</td>
+            <td>The resource does not exist at that path.</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>Server error</td>
+            <td>The server encountered an internal problem.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="callout">
+      <h2>Why this matters to web developers</h2>
+      <p>Understanding the request cycle helps developers debug problems faster. It also helps explain why page performance depends on how many files a site loads, how a server is configured, and how the browser handles responses.</p>
+    </section>
+
+  </main>
+
+    <footer class="page-footer">
+      <div class="footer-inner">
+        <p><strong>Web Servers and HTTP</strong> class project site.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="references.html">References</a>
+          <a href="about.html">About</a>
+          <a href="#top">Back to top</a>
+        </div>
+        <div id="project-note">
+          This website was created as a class project for Intro to Web Development. Visit the course website here:
+          <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

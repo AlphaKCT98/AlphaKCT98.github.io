@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Homepage for a class project about web servers and HTTP.">
+  <title>Web Servers and HTTP | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="branding">
+        <a id="site-title" href="index.html">Web Servers and HTTP</a>
+        <p>Intro to Web Development class project</p>
+      </div>
+      <!-- Main navigation stays consistent on every page -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="http-evolution.html">HTTP Evolution</a></li>
+          <li><a href="web-servers.html">Web Servers</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="small-note">Project homepage and cover page</p>
+          <h1>Web Servers and HTTP: How the Web Really Works Behind the Scenes</h1>
+          <p class="subhead">This website explains the basic systems that allow webpages to load, data to move, and users to connect with content across the web. It builds from my research paper and organizes the information into a simple website format.</p>
+          <div class="badge-row" aria-label="Key terms">
+            <span class="badge">Web Server</span>
+            <span class="badge">HTTP</span>
+            <span class="badge">DNS</span>
+            <span class="badge">Request</span>
+            <span class="badge">Response</span>
+            <span class="badge">HTTPS</span>
+          </div>
+          <div class="stat-row">
+            <div class="stat-box">
+              <h3>Topic Focus</h3>
+              <p>How browsers and servers communicate to deliver webpages.</p>
+            </div>
+            <div class="stat-box">
+              <h3>Research Goal</h3>
+              <p>Explain the web in clear language for beginner readers.</p>
+            </div>
+            <div class="stat-box">
+              <h3>Site Structure</h3>
+              <p>7 pages with great design, tables, images, and linked resources.</p>
+            </div>
+          </div>
+        </div>
+        <figure class="figure-card">
+          <img src="images/request-response.png" alt="Diagram showing a browser contacting DNS and a web server before receiving an HTTP response.">
+          <figcaption>A simplified view of what happens after a user enters a web address into a browser.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>Abstract</h2>
+      <p>The web feels instant, but that speed depends on a lot of coordinated work. A browser must locate the right server, request the correct file, and receive a response that can be displayed to the user. This project focuses on the two technologies at the center of that process: web servers and HTTP. It also looks at how HTTP evolved over time and why modern servers now handle security, performance, and application traffic in addition to basic file delivery.</p>
+    </section>
+
+    <section class="two-column">
+      <article class="content-card">
+        <h2>Key Terms</h2>
+        <dl class="definition-list">
+          <div>
+            <dt>Web Server</dt>
+            <dd>A machine or program that stores web content and sends it to users when requested.</dd>
+          </div>
+          <div>
+            <dt>HTTP</dt>
+            <dd>The communication protocol that lets browsers and servers exchange information.</dd>
+          </div>
+          <div>
+            <dt>DNS</dt>
+            <dd>The naming system that converts a domain name into the address of a server.</dd>
+          </div>
+          <div>
+            <dt>Status Code</dt>
+            <dd>A short server message that tells the browser whether a request worked.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="content-card">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="how-it-works.html">How the request and response process works</a></li>
+          <li><a href="http-evolution.html">How HTTP changed from early versions to HTTP/3</a></li>
+          <li><a href="web-servers.html">How web servers evolved and what modern servers do</a></li>
+          <li><a href="key-concepts.html">Definitions for important web concepts</a></li>
+          <li><a href="references.html">References and learning resources</a></li>
+          <li><a href="about.html">About me and the Project</a></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="table-wrap">
+      <table>
+        <caption>Website page overview</caption>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Purpose</th>
+            <th>Main Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Home</td>
+            <td>Cover page and summary</td>
+            <td>Title, abstract, key terms, and navigation</td>
+          </tr>
+          <tr>
+            <td>How It Works</td>
+            <td>Explain the request cycle</td>
+            <td>Browser, DNS, server, and response steps</td>
+          </tr>
+          <tr>
+            <td>HTTP Evolution</td>
+            <td>Show historical development</td>
+            <td>Versions 0.9, 1.0, 1.1, 2, and 3</td>
+          </tr>
+          <tr>
+            <td>Web Servers</td>
+            <td>Describe server roles</td>
+            <td>Apache, Nginx, IIS, and modern server tasks</td>
+          </tr>
+          <tr>
+            <td>Key Concepts</td>
+            <td>Define important terms</td>
+            <td>Short explanations for 7 core ideas</td>
+          </tr>
+          <tr>
+            <td>References</td>
+            <td>Support further learning</td>
+            <td>Research sources and helpful links</td>
+          </tr>
+          <tr>
+            <td>About</td>
+            <td>Introduce me & the Project's Purpose</td>
+            <td>Mini resume and project purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="callout">
+      <h2>Why this topic matters</h2>
+      <p>Most people use the web every day without thinking about the systems behind it. Learning how servers and HTTP work makes web development feel less mysterious. It also helps explain why performance, security, and browser behavior matter so much when building a website.</p>
+    </section>
+
+  </main>
+
+    <footer class="page-footer">
+      <div class="footer-inner">
+        <p><strong>Web Servers and HTTP</strong> class project site.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="references.html">References</a>
+          <a href="about.html">About</a>
+          <a href="#top">Back to top</a>
+        </div>
+        <div id="project-note">
+          This website was created as a class project for Intro to Web Development. Visit the course website here:
+          <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

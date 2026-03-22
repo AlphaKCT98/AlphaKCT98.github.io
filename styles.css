@@ -1,0 +1,412 @@
+
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-alt: #eef4fb;
+  --text: #1f2937;
+  --muted: #58657a;
+  --accent: #1d4ed8;
+  --accent-dark: #153b9b;
+  --border: #cfd9e8;
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  --radius: 16px;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+  color: var(--text);
+  background: linear-gradient(180deg, #f7f9fc 0%, #eef4fb 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+a:hover,
+a:focus-visible {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--accent);
+  z-index: 1000;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 50;
+}
+
+.header-inner,
+.page-shell,
+.footer-inner {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+#site-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.branding p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--surface-alt);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.site-nav a.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.page-shell {
+  padding: 2rem 0 3rem;
+}
+
+.hero,
+.content-card,
+.highlight-box,
+.figure-card,
+.callout,
+.table-wrap,
+.definition-card,
+.checklist,
+.resume-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-grid,
+.two-column,
+.cards-grid,
+.timeline-grid,
+.summary-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-grid {
+  grid-template-columns: 1.4fr 1fr;
+  align-items: start;
+}
+
+.two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+
+.cards-grid,
+.summary-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.timeline-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.hero h1,
+.content-card h2,
+.figure-card h2,
+.resume-card h2,
+.highlight-box h2,
+.callout h2 {
+  line-height: 1.25;
+}
+
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hero p,
+.content-card p,
+.resume-card p,
+.callout p,
+.figure-card p {
+  margin-top: 0;
+}
+
+.hero .subhead {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.badge-row,
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge,
+.tag-list span {
+  background: var(--surface-alt);
+  color: var(--accent-dark);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.92rem;
+}
+
+.content-card,
+.figure-card,
+.highlight-box,
+.callout,
+.resume-card,
+.definition-card,
+.checklist {
+  padding: 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.content-card ul,
+.content-card ol,
+.figure-card ul,
+.resume-card ul,
+.checklist ul {
+  padding-left: 1.3rem;
+}
+
+.definition-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.definition-list div {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.definition-list dt {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.definition-list dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+th {
+  background: #edf3fe;
+}
+
+.table-wrap {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.stat-box {
+  flex: 1 1 180px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.stat-box h3 {
+  margin: 0 0 0.3rem;
+}
+
+.callout {
+  border-left: 6px solid var(--accent);
+}
+
+code {
+  background: #eaf0fb;
+  padding: 0.15rem 0.35rem;
+  border-radius: 6px;
+}
+
+.page-footer {
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.footer-inner {
+  padding: 1.4rem 0 2rem;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ID selector */
+#project-note {
+  background: #eef4fb;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  margin-top: 1rem;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .header-inner,
+  .hero-grid,
+  .two-column {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .header-inner {
+    justify-content: stretch;
+  }
+
+  .site-nav ul {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding-top: 1.2rem;
+  }
+
+  .hero,
+  .content-card,
+  .figure-card,
+  .highlight-box,
+  .callout,
+  .resume-card,
+  .definition-card,
+  .checklist {
+    padding: 1rem;
+  }
+
+  .site-nav a {
+    padding: 0.5rem 0.75rem;
+  }
+}
