@@ -1,89 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="References and learning resources page for a web servers and HTTP project.">
-  <title>Web Servers and HTTP | References</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body id="top">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="branding">
-        <a id="site-title" href="index.html">Web Servers and HTTP</a>
-        <p>Intro to Web Development class project</p>
-      </div>
-      <!-- Main navigation stays consistent on every page -->
-      <nav class="site-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="http-evolution.html">HTTP Evolution</a></li>
-          <li><a href="web-servers.html">Web Servers</a></li>
-          <li><a href="key-concepts.html">Key Concepts</a></li>
-          <li><a href="references.html" class="active">References</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+// Quiz logic for the self-assessment page.
+// This file checks answers, calculates a score, and prints feedback on the same page.
 
-  <main id="main-content" class="page-shell">
-    <section class="hero">
-      <p class="small-note">References and resources page</p>
-      <h1>References and Learning Resources</h1>
-      <p class="subhead">This page collects the sources used in the original research paper and adds a short explanation of why each one is useful.</p>
-    </section>
+const quizForm = document.getElementById("quiz-form");
+const resetButton = document.getElementById("reset-quiz");
+const resultsSection = document.getElementById("quiz-results");
+const resultSummary = document.getElementById("result-summary");
+const resultDetails = document.getElementById("result-details");
 
-    <section class="content-card">
-      <h2>References used for the project</h2>
-      <ol>
-        <li><a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank" rel="noopener noreferrer">Apache HTTP Server</a> , background on Apache and its role in web history.</li>
-        <li><a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface" target="_blank" rel="noopener noreferrer">Common Gateway Interface</a> , explains one of the earliest ways servers generated dynamic content.</li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP" target="_blank" rel="noopener noreferrer">MDN Web Docs: Evolution of HTTP</a> , a strong overview of HTTP version changes.</li>
-        <li><a href="https://en.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener noreferrer">HTTP</a> , general history and background of the protocol.</li>
-        <li><a href="https://en.wikipedia.org/wiki/NCSA_HTTPd" target="_blank" rel="noopener noreferrer">NCSA HTTPd</a> , useful for understanding early server development.</li>
-        <li><a href="https://www.techtarget.com/whatis/definition/Web-server" target="_blank" rel="noopener noreferrer">TechTarget: What Is a Web Server?</a> , clear explanation of the purpose of web servers.</li>
-        <li><a href="https://medium.com/theymakedesign/what-is-web-server-functions-security-and-types-8f5d49024b55" target="_blank" rel="noopener noreferrer">What Is a Web Server and How It Works</a> , adds a beginner friendly discussion of function and security.</li>
-        <li><a href="https://en.wikipedia.org/wiki/Web_server" target="_blank" rel="noopener noreferrer">Web Server</a> , broad background on web server hardware and software.</li>
-        <li><a href="https://dev-aditya.medium.com/http-1-vs-http-2-vs-http-3-the-evolution-of-the-web-49fa2b59428e" target="_blank" rel="noopener noreferrer">HTTP 1 vs HTTP 2 vs HTTP 3</a> , compares major versions in simple language.</li>
-      </ol>
-    </section>
+const answerKey = {
+  q1: {
+    type: "text",
+    accepted: ["dns", "domain name system"],
+    correctAnswer: "DNS (Domain Name System)",
+    explanation: "DNS is the naming system that helps browsers find the correct server address."
+  },
+  q2: {
+    type: "single",
+    accepted: "HTTP/1.1",
+    correctAnswer: "HTTP/1.1",
+    explanation: "HTTP/1.1 introduced persistent connections so one connection could handle more than one request."
+  },
+  q3: {
+    type: "single",
+    accepted: "HTTP/2",
+    correctAnswer: "HTTP/2",
+    explanation: "HTTP/2 is known for binary framing and multiplexing over a single connection."
+  },
+  q4: {
+    type: "single",
+    accepted: "The requested resource could not be found",
+    correctAnswer: "The requested resource could not be found",
+    explanation: "A 404 error means the server could not find the requested resource at that path."
+  },
+  q5: {
+    type: "single",
+    accepted: "Nginx",
+    correctAnswer: "Nginx",
+    explanation: "Nginx is especially known for speed, scalability, reverse proxy use, and event-driven design."
+  },
+  q6: {
+    type: "multi",
+    accepted: [
+      "Manage encrypted HTTPS connections",
+      "Serve HTML, CSS, images, and other files",
+      "Work with back end systems such as APIs and databases"
+    ],
+    correctAnswer: "Serve HTML, CSS, images, and other files; Manage encrypted HTTPS connections; Work with back end systems such as APIs and databases",
+    explanation: "Modern web servers commonly serve files, handle encrypted traffic, and connect users to applications or APIs."
+  }
+};
 
-    <section class="two-column">
-      <article class="content-card">
-        <h2>Best starting points for new learners</h2>
-        <ul>
-          <li><strong>MDN:</strong> best for technical explanations that are still readable.</li>
-          <li><strong>TechTarget:</strong> useful for quick definitions and beginner summaries.</li>
-          <li><strong>Wikipedia:</strong> useful for history and cross-referencing related topics.</li>
-        </ul>
-      </article>
-      <article class="content-card">
-        <h2>Research note</h2>
-        <p>This site is based on the first essay version of the project, so the content is intentionally focused on core ideas. Later milestones can expand the research with more detail, more examples, and stronger visuals.</p>
-      </article>
-    </section>
+const questionText = {
+  q1: "The system that translates domain names into server addresses is called _____.",
+  q2: "Which HTTP version introduced persistent connections?",
+  q3: "Which version of HTTP is known for multiplexing and a binary format?",
+  q4: "What does a 404 status code usually mean?",
+  q5: "Which web server software is especially known for speed, scalability, and an event-driven design?",
+  q6: "Select every task that modern web servers commonly handle."
+};
 
-  </main>
+const questionLabels = {
+  q1: "Question 1",
+  q2: "Question 2",
+  q3: "Question 3",
+  q4: "Question 4",
+  q5: "Question 5",
+  q6: "Question 6"
+};
 
-    <footer class="page-footer">
-      <div class="footer-inner">
-        <p><strong>Web Servers and HTTP</strong> class project site.</p>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="references.html">References</a>
-          <a href="about.html">About</a>
-          <a href="#top">Back to top</a>
-        </div>
-        <div id="project-note">
-          This website was created as a class project for Intro to Web Development. Visit the course website here:
-          <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
-        </div>
-      </div>
-    </footer>
+function normalizeText(value) {
+  return value.trim().toLowerCase().replace(/[^\w\s/]/g, "").replace(/\s+/g, " ");
+}
 
-</body>
-</html>
+function getSingleAnswer(name) {
+  const selected = document.querySelector(`input[name="${name}"]:checked`);
+  return selected ? selected.value : "";
+}
+
+function getMultiAnswer(name) {
+  return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+    .map((item) => item.value)
+    .sort();
+}
+
+function answersMatchMulti(userAnswers, correctAnswers) {
+  if (userAnswers.length !== correctAnswers.length) {
+    return false;
+  }
+  const sortedCorrect = [...correctAnswers].sort();
+  return userAnswers.every((value, index) => value === sortedCorrect[index]);
+}
+
+function createDetailCard(questionId, earnedPoint, userAnswerText, correctAnswerText, explanationText) {
+  const wrapper = document.createElement("article");
+  wrapper.className = `result-card ${earnedPoint ? "correct-card" : "incorrect-card"}`;
+
+  const statusText = earnedPoint ? "Correct" : "Incorrect";
+
+  wrapper.innerHTML = `
+    <h3>${questionLabels[questionId]}: ${statusText}</h3>
+    <p><strong>Question:</strong> ${questionText[questionId]}</p>
+    <p><strong>Your answer:</strong> ${userAnswerText || "No answer provided"}</p>
+    <p><strong>Correct answer:</strong> ${correctAnswerText}</p>
+    <p><strong>Score:</strong> ${earnedPoint} / 1</p>
+    <p class="result-explanation"><strong>Why:</strong> ${explanationText}</p>
+  `;
+
+  return wrapper;
+}
+
+quizForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let totalScore = 0;
+  const totalQuestions = Object.keys(answerKey).length;
+  resultDetails.innerHTML = "";
+
+  const q1Input = document.getElementById("q1").value;
+  const normalizedQ1 = normalizeText(q1Input);
+  const q1Correct = answerKey.q1.accepted.includes(normalizedQ1) ? 1 : 0;
+  totalScore += q1Correct;
+  resultDetails.appendChild(
+    createDetailCard("q1", q1Correct, q1Input, answerKey.q1.correctAnswer, answerKey.q1.explanation)
+  );
+
+  ["q2", "q3", "q4", "q5"].forEach((questionId) => {
+    const userAnswer = getSingleAnswer(questionId);
+    const isCorrect = userAnswer === answerKey[questionId].accepted ? 1 : 0;
+    totalScore += isCorrect;
+    resultDetails.appendChild(
+      createDetailCard(
+        questionId,
+        isCorrect,
+        userAnswer,
+        answerKey[questionId].correctAnswer,
+        answerKey[questionId].explanation
+      )
+    );
+  });
+
+  const q6Answers = getMultiAnswer("q6");
+  const q6Correct = answersMatchMulti(q6Answers, answerKey.q6.accepted) ? 1 : 0;
+  totalScore += q6Correct;
+  resultDetails.appendChild(
+    createDetailCard(
+      "q6",
+      q6Correct,
+      q6Answers.join("; "),
+      answerKey.q6.correctAnswer,
+      answerKey.q6.explanation
+    )
+  );
+
+  const passed = totalScore >= 4;
+  const percent = Math.round((totalScore / totalQuestions) * 100);
+
+  resultSummary.className = `result-summary ${passed ? "pass-summary" : "fail-summary"}`;
+  resultSummary.innerHTML = `
+    <h2>${passed ? "Pass" : "Fail"}</h2>
+    <p><strong>Total score:</strong> ${totalScore} / ${totalQuestions} (${percent}%)</p>
+    <p><strong>Overall result:</strong> ${passed ? "You passed this self-assessment quiz." : "You did not pass this self-assessment quiz yet."}</p>
+  `;
+
+  resultsSection.hidden = false;
+  resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+resetButton.addEventListener("click", function () {
+  quizForm.reset();
+  resultsSection.hidden = true;
+  resultSummary.innerHTML = "";
+  resultDetails.innerHTML = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

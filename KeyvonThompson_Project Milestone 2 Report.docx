@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Homepage for a class project about web servers and HTTP.">
+  <title>Web Servers and HTTP | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+<!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <!-- This header stays the same on every page so the site feels connected and easier to move through. -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="branding">
+        <a id="site-title" href="index.html">Web Servers and HTTP</a>
+        <p>Intro to Web Development class project</p>
+      </div>
+	  <!-- Main navigation stays consistent on every page -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="http-evolution.html">HTTP Evolution</a></li>
+          <li><a href="web-servers.html">Web Servers</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<!-- The main area starts with a homepage hero, then moves into study sections that map out the whole site. -->
+  <main id="main-content" class="page-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Project homepage</p>
+          <h1>Web Servers and HTTP: How the Web Really Works Behind the Scenes</h1>
+          <p class="subhead">This site explains how browsers, DNS, HTTP, and web servers work together to load modern webpages. It starts with my original research paper and expands it into a cleaner, more visual study website.</p>
+          <div class="badge-row" aria-label="Key terms">
+            <span class="badge">Web Server</span>
+            <span class="badge">HTTP</span>
+            <span class="badge">HTTP/3</span>
+            <span class="badge">DNS</span>
+            <span class="badge">Caching</span>
+            <span class="badge">HTTPS</span>
+          </div>
+          <div class="metric-grid">
+            <div class="stat-box">
+              <h3>Main focus</h3>
+              <p>How browsers and servers communicate to deliver web content.</p>
+            </div>
+            <div class="stat-box">
+              <h3>What changed</h3>
+              <p>More content, more references, cleaner structure, and stronger page styling.</p>
+            </div>
+            <div class="stat-box">
+              <h3>Site contents</h3>
+              <p>8 pages with topic guides, a glossary, a quiz, and expanded resources.</p>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="button-link" href="how-it-works.html">Start with the request cycle</a>
+            <a class="button-secondary" href="quiz.html">Take the quiz</a>
+          </div>
+        </div>
+        <figure class="figure-card">
+          <img src="images/request-response.png" alt="Diagram showing a browser contacting DNS and a web server before receiving an HTTP response.">
+          <figcaption>A page request may feel instant, but the browser still has to find the server, ask for files, and render the response.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="page-section content-card">
+      <div class="section-heading">
+        <h2>Abstract</h2>
+        <p>This project explains the systems that make ordinary browsing possible.</p>
+      </div>
+      <p>The web feels simple from the user side, but a lot happens underneath that clean experience. A browser has to resolve a domain name, open a network connection, send an HTTP request, receive a response, and then assemble many files into one visible page. This site focuses on the two technologies at the center of that process: web servers and HTTP. It also shows how HTTP evolved from a basic document protocol into a faster system built for media-heavy and interactive websites.</p>
+      <p>In this improved version of the site, I added more explanation about DNS, HTTPS, server responsibilities, latency, caching, reverse proxies, and content delivery. I also cleaned up the layout so each page is easier to scan and study.</p>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>What you will learn</h2>
+        <p>Each topic page focuses on one part of the bigger picture.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="mini-card">
+          <h3>1. How a request moves</h3>
+          <p>Follow the path from a typed URL to DNS lookup, server processing, and page rendering.</p>
+        </article>
+        <article class="mini-card">
+          <h3>2. Why HTTP changed</h3>
+          <p>See how HTTP/0.9, 1.0, 1.1, 2, and 3 each solved new performance problems.</p>
+        </article>
+        <article class="mini-card">
+          <h3>3. What servers do today</h3>
+          <p>Look at server software, HTTPS, caching, reverse proxy work, and back end connections.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section two-column">
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>Key terms</h2>
+          <p>A few important ideas appear across the whole site.</p>
+        </div>
+        <dl class="definition-list">
+          <div>
+            <dt>Web Server</dt>
+            <dd>A machine or software service that stores resources and returns them to clients.</dd>
+          </div>
+          <div>
+            <dt>HTTP</dt>
+            <dd>The application protocol browsers and servers use to exchange web resources.</dd>
+          </div>
+          <div>
+            <dt>DNS</dt>
+            <dd>The naming system that maps human-readable domains to IP addresses.</dd>
+          </div>
+          <div>
+            <dt>Latency</dt>
+            <dd>The delay between a request being sent and the response starting to arrive.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>Table of contents</h2>
+          <p>Use these pages like a short study guide.</p>
+        </div>
+        <ol>
+          <li><a href="how-it-works.html">How the request and response cycle works</a></li>
+          <li><a href="http-evolution.html">How HTTP developed from HTTP/0.9 to HTTP/3</a></li>
+          <li><a href="web-servers.html">How web servers evolved and what they do today</a></li>
+          <li><a href="key-concepts.html">A larger glossary of core web concepts</a></li>
+          <li><a href="quiz.html">A self-assessment quiz with instant scoring</a></li>
+          <li><a href="references.html">References, official documentation, and extra learning resources</a></li>
+          <li><a href="about.html">About the student and the purpose of the project</a></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="page-section timeline-strip">
+      <div class="section-heading">
+        <h2>HTTP at a glance</h2>
+        <p>New versions kept the same core goal while improving speed and efficiency.</p>
+      </div>
+      <ol class="timeline-list">
+        <li><strong>HTTP/0.9</strong><span>Simple document retrieval with only the <code>GET</code> method.</span></li>
+        <li><strong>HTTP/1.0</strong><span>Added headers and status codes so responses could explain what happened.</span></li>
+        <li><strong>HTTP/1.1</strong><span>Added persistent connections and better caching support.</span></li>
+        <li><strong>HTTP/2</strong><span>Added multiplexing and binary framing for better performance.</span></li>
+        <li><strong>HTTP/3</strong><span>Uses QUIC to cut latency and improve behavior on unstable networks.</span></li>
+      </ol>
+    </section>
+
+    <section class="page-section table-wrap">
+      <table>
+        <caption>Website page overview</caption>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Purpose</th>
+            <th>Main content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Home</td>
+            <td>Introduce the topic and map the site</td>
+            <td>Abstract, key terms, topic guide, and quick timeline</td>
+          </tr>
+          <tr>
+            <td>How It Works</td>
+            <td>Explain the request cycle</td>
+            <td>DNS, requests, responses, rendering, and performance factors</td>
+          </tr>
+          <tr>
+            <td>HTTP Evolution</td>
+            <td>Explain protocol changes over time</td>
+            <td>Version milestones, features, transport choices, and major benefits</td>
+          </tr>
+          <tr>
+            <td>Web Servers</td>
+            <td>Describe modern server roles</td>
+            <td>Apache, Nginx, IIS, reverse proxy work, static vs dynamic content</td>
+          </tr>
+          <tr>
+            <td>Key Concepts</td>
+            <td>Build a stronger glossary</td>
+            <td>12 terms including TLS, CDN, reverse proxy, caching, and latency</td>
+          </tr>
+          <tr>
+            <td>Quiz</td>
+            <td>Check understanding</td>
+            <td>Interactive questions with instant feedback and reset option</td>
+          </tr>
+          <tr>
+            <td>References</td>
+            <td>Support research and further learning</td>
+            <td>Official docs, standards, course resource, and extra study links</td>
+          </tr>
+          <tr>
+            <td>About</td>
+            <td>Introduce the student and project progress</td>
+            <td>Mini resume, milestone improvements, and project goals</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-section callout">
+      <h2>Why this topic matters</h2>
+      <p>Most people use websites every day without seeing the systems underneath them. Learning the basics of web servers and HTTP makes web development feel less mysterious. It also helps explain why performance, security, and network design matter so much when building sites people actually want to use.</p>
+    </section>
+  </main>
+  <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <p><strong>Web Servers and HTTP</strong> class project site.</p>
+      <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="references.html">References</a>
+          <a href="about.html">About</a>
+          <a href="#top">Back to top</a>
+      </div>
+      <div id="project-note">
+        This website was created as a class project for Intro to Web Development. Visit the course website here:
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page defining key concepts related to web servers and HTTP.">
+  <title>Web Servers and HTTP | Key Concepts</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="branding">
+        <a id="site-title" href="index.html">Web Servers and HTTP</a>
+        <p>Intro to Web Development class project</p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="http-evolution.html">HTTP Evolution</a></li>
+          <li><a href="web-servers.html">Web Servers</a></li>
+          <li><a href="key-concepts.html" class="active">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="hero">
+      <p class="eyebrow">Glossary and study page</p>
+      <h1>Key Concepts</h1>
+      <p class="subhead">These terms build the foundation for understanding how web servers and HTTP work. This page expands the glossary from the earlier version of the project so the site can function more like a real study guide.</p>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Core web communication terms</h2>
+        <p>These terms appear across almost every page in the site.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="definition-card">
+          <h2>1. Web Server</h2>
+          <p>A web server is either the machine or the software that stores resources and returns them to clients.</p>
+        </article>
+        <article class="definition-card">
+          <h2>2. HTTP</h2>
+          <p>HTTP is the protocol used for communication between a client, such as a browser, and a server.</p>
+        </article>
+        <article class="definition-card">
+          <h2>3. HTTPS</h2>
+          <p>HTTPS is the secure version of HTTP and uses TLS encryption to protect data in transit.</p>
+        </article>
+        <article class="definition-card">
+          <h2>4. DNS</h2>
+          <p>DNS translates human-friendly domain names into IP addresses that computers can route to.</p>
+        </article>
+        <article class="definition-card">
+          <h2>5. Request</h2>
+          <p>A request is the message the client sends when it wants a resource or wants the server to perform an action.</p>
+        </article>
+        <article class="definition-card">
+          <h2>6. Response</h2>
+          <p>A response is the server's reply, including a status code, headers, and often a body with content.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Performance, security, and delivery terms</h2>
+        <p>These help explain why the modern web feels fast and secure.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="definition-card">
+          <h2>7. Status Code</h2>
+          <p>A numeric result that tells the browser whether a request succeeded, redirected, or failed.</p>
+        </article>
+        <article class="definition-card">
+          <h2>8. Caching</h2>
+          <p>Caching stores previously fetched content so it can be reused instead of downloaded again.</p>
+        </article>
+        <article class="definition-card">
+          <h2>9. Latency</h2>
+          <p>Latency is the delay between sending a request and beginning to receive the response.</p>
+        </article>
+        <article class="definition-card">
+          <h2>10. TLS</h2>
+          <p>TLS is the encryption protocol commonly used to secure HTTPS connections.</p>
+        </article>
+        <article class="definition-card">
+          <h2>11. Reverse Proxy</h2>
+          <p>A reverse proxy sits in front of back end services and forwards requests to the right destination.</p>
+        </article>
+        <article class="definition-card">
+          <h2>12. CDN</h2>
+          <p>A content delivery network stores copies of assets in multiple locations so users can fetch them from a closer server.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section table-wrap">
+      <table>
+        <caption>Why each concept matters</caption>
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Web Server</td>
+            <td>Without a server, there is nowhere for website content to be stored and delivered from.</td>
+          </tr>
+          <tr>
+            <td>HTTP and HTTPS</td>
+            <td>These define how data moves and whether that communication is protected in transit.</td>
+          </tr>
+          <tr>
+            <td>DNS</td>
+            <td>DNS makes the web human-friendly by letting people type names instead of raw numeric addresses.</td>
+          </tr>
+          <tr>
+            <td>Request and Response</td>
+            <td>These two message types are the core cycle of web communication.</td>
+          </tr>
+          <tr>
+            <td>Status Code</td>
+            <td>Status codes help both browsers and developers quickly understand what happened.</td>
+          </tr>
+          <tr>
+            <td>Caching and CDN</td>
+            <td>These reduce repeated downloads and can move content closer to the user.</td>
+          </tr>
+          <tr>
+            <td>Latency and TLS</td>
+            <td>These strongly affect real-world speed and security.</td>
+          </tr>
+          <tr>
+            <td>Reverse Proxy</td>
+            <td>This helps scale, secure, and organize more complex web applications.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-section callout">
+      <h2>Study tip</h2>
+      <p>If you can explain the difference between DNS, HTTP, a status code, a reverse proxy, and caching in your own words, you already understand a big part of how the web works behind the scenes.</p>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <p><strong>Web Servers and HTTP</strong> class project site.</p>
+      <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="references.html">References</a>
+          <a href="about.html">About</a>
+          <a href="#top">Back to top</a>
+      </div>
+      <div id="project-note">
+        This website was created as a class project for Intro to Web Development. Visit the course website here:
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

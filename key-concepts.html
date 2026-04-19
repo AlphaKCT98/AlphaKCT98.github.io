@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Page defining key concepts related to web servers and HTTP.">
-  <title>Web Servers and HTTP | Key Concepts</title>
+  <meta name="description" content="Topic page describing the evolution of HTTP.">
+  <title>Web Servers and HTTP | HTTP Evolution</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
@@ -15,14 +15,14 @@
         <a id="site-title" href="index.html">Web Servers and HTTP</a>
         <p>Intro to Web Development class project</p>
       </div>
-      <!-- Main navigation stays consistent on every page -->
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="http-evolution.html">HTTP Evolution</a></li>
+          <li><a href="http-evolution.html" class="active">HTTP Evolution</a></li>
           <li><a href="web-servers.html">Web Servers</a></li>
-          <li><a href="key-concepts.html" class="active">Key Concepts</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -32,93 +32,160 @@
 
   <main id="main-content" class="page-shell">
     <section class="hero">
-      <p class="small-note">Key concepts page</p>
-      <h1>Key Concepts</h1>
-      <p class="subhead">These are the main terms a beginner should understand before studying the web in more depth.</p>
+      <p class="eyebrow">Topic page 2</p>
+      <h1>The Evolution of HTTP</h1>
+      <p class="subhead">HTTP started as a very simple protocol for fetching documents. As sites became larger, faster, and more interactive, the protocol had to improve too. Each major version solved a different kind of communication problem.</p>
     </section>
 
-    <section class="cards-grid">
-      <article class="definition-card">
-        <h2>1. Web Server</h2>
-        <p>A web server is either the machine or the software that stores web resources and sends them to browsers.</p>
-      </article>
-      <article class="definition-card">
-        <h2>2. HTTP</h2>
-        <p>HTTP is the main protocol used for communication between a browser and a server.</p>
-      </article>
-      <article class="definition-card">
-        <h2>3. HTTPS</h2>
-        <p>HTTPS is the secure version of HTTP. It uses encryption to protect data while it is moving across the network.</p>
-      </article>
-      <article class="definition-card">
-        <h2>4. DNS</h2>
-        <p>DNS translates readable domain names into the network addresses computers actually use.</p>
-      </article>
-      <article class="definition-card">
-        <h2>5. Request</h2>
-        <p>A request is the message sent from a browser to a server asking for a resource.</p>
-      </article>
-      <article class="definition-card">
-        <h2>6. Response</h2>
-        <p>A response is the server's reply. It includes the requested content or an error message if something fails.</p>
-      </article>
-      <article class="definition-card">
-        <h2>7. Status Code</h2>
-        <p>A status code is a numeric summary of the result of a request, such as 200 for success or 404 for not found.</p>
-      </article>
+    <section class="page-section figure-card">
+      <img src="images/http-timeline.png" alt="Timeline showing HTTP versions 0.9, 1.0, 1.1, 2, and 3.">
+      <figcaption>Each major version kept the same main goal but changed how efficiently requests and responses move across the network.</figcaption>
     </section>
 
-    <section class="table-wrap">
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Version highlights</h2>
+        <p>These short summaries show why each version mattered.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="content-card">
+          <h2>HTTP/0.9</h2>
+          <p>The earliest version was extremely basic. It only supported the <code>GET</code> method and had no status codes or headers.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/1.0</h2>
+          <p>This version added status codes and headers, which made responses clearer. It still opened a new connection for each request.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/1.1</h2>
+          <p>This update introduced persistent connections and better caching behavior. It stayed dominant for many years because it solved a huge performance problem.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/2</h2>
+          <p>HTTP/2 introduced multiplexing and binary framing so multiple transfers could share one connection more efficiently.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/3</h2>
+          <p>HTTP/3 maps HTTP semantics onto QUIC. That change lowers latency and helps more on weak or unstable networks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section table-wrap">
       <table>
-        <caption>Why each concept matters</caption>
+        <caption>HTTP version comparison</caption>
         <thead>
           <tr>
-            <th>Concept</th>
-            <th>Why It Matters</th>
+            <th>Version</th>
+            <th>Main improvement</th>
+            <th>Transport note</th>
+            <th>Main reason to move forward</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Web Server</td>
-            <td>Without a server, there is nowhere for website content to be stored and delivered from.</td>
+            <td>HTTP/0.9</td>
+            <td>Simple document retrieval</td>
+            <td>Very limited request and response format</td>
+            <td>No headers, no status codes, and only one method</td>
           </tr>
           <tr>
-            <td>HTTP / HTTPS</td>
-            <td>These protocols define how web data moves and how that communication is protected.</td>
+            <td>HTTP/1.0</td>
+            <td>Headers and status codes</td>
+            <td>New connection per request</td>
+            <td>Too much overhead for pages with many resources</td>
           </tr>
           <tr>
-            <td>DNS</td>
-            <td>DNS makes the web human friendly by letting people type names instead of numeric addresses.</td>
+            <td>HTTP/1.1</td>
+            <td>Persistent connections and improved caching</td>
+            <td>Still runs over TCP</td>
+            <td>Modern pages pushed it toward more efficient multiplexing</td>
           </tr>
           <tr>
-            <td>Request / Response</td>
-            <td>These messages make up the core cycle of web communication.</td>
+            <td>HTTP/2</td>
+            <td>Multiplexing and binary framing</td>
+            <td>Still relies on TCP underneath</td>
+            <td>Needed better behavior under packet loss and lower setup latency</td>
           </tr>
           <tr>
-            <td>Status Code</td>
-            <td>Status codes help browsers and developers understand whether a request succeeded or failed.</td>
+            <td>HTTP/3</td>
+            <td>Uses QUIC with lower latency</td>
+            <td>Runs over UDP through QUIC</td>
+            <td>Improves performance and connection recovery on modern networks</td>
           </tr>
         </tbody>
       </table>
     </section>
 
+    <section class="page-section two-column">
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>What stayed the same</h2>
+          <p>New versions changed delivery, not the core idea.</p>
+        </div>
+        <ul>
+          <li>Browsers still send requests and servers still send responses.</li>
+          <li>Status codes, methods, and headers still matter.</li>
+          <li>The basic goal is still resource delivery between client and server.</li>
+        </ul>
+      </article>
+
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>What changed the most</h2>
+          <p>Efficiency became the main theme of HTTP history.</p>
+        </div>
+        <ul>
+          <li>Fewer wasted connections</li>
+          <li>Better handling of many files at once</li>
+          <li>Lower latency on real-world networks</li>
+          <li>More practical performance for mobile browsing</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Why newer versions matter</h2>
+        <p>Protocol changes directly affect user experience.</p>
+      </div>
+      <div class="quick-facts">
+        <div class="fact">
+          <h3>Faster first load</h3>
+          <p>Lower latency and better connection handling help pages start rendering sooner.</p>
+        </div>
+        <div class="fact">
+          <h3>Better support for complex sites</h3>
+          <p>Modern pages pull many assets, and newer HTTP versions are better at handling that complexity.</p>
+        </div>
+        <div class="fact">
+          <h3>Stronger modern networking</h3>
+          <p>HTTP/3 works with QUIC, which improves connection behavior on unstable networks and wireless connections.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section callout">
+      <h2>Big idea</h2>
+      <p>HTTP history is really the story of the web adapting to its own success. As users expected richer pages, stronger security, and faster performance, the protocol had to keep getting smarter without breaking the basic request-and-response model that made the web work in the first place.</p>
+    </section>
   </main>
 
-    <footer class="page-footer">
-      <div class="footer-inner">
-        <p><strong>Web Servers and HTTP</strong> class project site.</p>
-        <div class="footer-links">
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <p><strong>Web Servers and HTTP</strong> class project site.</p>
+      <div class="footer-links">
           <a href="index.html">Home</a>
+          <a href="quiz.html">Quiz</a>
           <a href="references.html">References</a>
           <a href="about.html">About</a>
           <a href="#top">Back to top</a>
-        </div>
-        <div id="project-note">
-          This website was created as a class project for Intro to Web Development. Visit the course website here:
-          <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
-        </div>
       </div>
-    </footer>
-
+      <div id="project-note">
+        This website was created as a class project for Intro to Web Development. Visit the course website here:
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
