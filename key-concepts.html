@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Topic page describing the evolution of HTTP.">
-  <title>Web Servers and HTTP | HTTP Evolution</title>
+  <meta name="description" content="Page defining key concepts related to web servers and HTTP.">
+  <title>Web Servers and HTTP | Key Concepts</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
+  <!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
@@ -15,13 +16,14 @@
         <a id="site-title" href="index.html">Web Servers and HTTP</a>
         <p>Intro to Web Development class project</p>
       </div>
+      <!-- Main navigation stays consistent on every page -->
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="http-evolution.html" class="active">HTTP Evolution</a></li>
+          <li><a href="http-evolution.html">HTTP Evolution</a></li>
           <li><a href="web-servers.html">Web Servers</a></li>
-          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="key-concepts.html" class="active">Key Concepts</a></li>
           <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
@@ -30,147 +32,173 @@
     </div>
   </header>
 
+  <!-- This page acts like a glossary, so I grouped the terms by what they help explain. -->
   <main id="main-content" class="page-shell">
     <section class="hero">
-      <p class="eyebrow">Topic page 2</p>
-      <h1>The Evolution of HTTP</h1>
-      <p class="subhead">HTTP started as a very simple protocol for fetching documents. As sites became larger, faster, and more interactive, the protocol had to improve too. Each major version solved a different kind of communication problem.</p>
-    </section>
-
-    <section class="page-section figure-card">
-      <img src="images/http-timeline.png" alt="Timeline showing HTTP versions 0.9, 1.0, 1.1, 2, and 3.">
-      <figcaption>Each major version kept the same main goal but changed how efficiently requests and responses move across the network.</figcaption>
+      <p class="eyebrow">Glossary and study page</p>
+      <h1>Key Concepts</h1>
+      <p class="subhead">These terms build the foundation for understanding how web servers and HTTP work. This page expands the glossary from the earlier version of the project so the site can function more like a real study guide.</p>
     </section>
 
     <section class="page-section">
       <div class="section-heading">
-        <h2>Version highlights</h2>
-        <p>These short summaries show why each version mattered.</p>
+        <h2>Core web communication terms</h2>
+        <p>These terms appear across almost every page in the site.</p>
       </div>
       <div class="cards-grid">
-        <article class="content-card">
-          <h2>HTTP/0.9</h2>
-          <p>The earliest version was extremely basic. It only supported the <code>GET</code> method and had no status codes or headers.</p>
+        <article class="definition-card">
+          <h2>1. Web Server</h2>
+          <p>A web server is either the machine or the software that stores resources and returns them to clients.</p>
         </article>
-        <article class="content-card">
-          <h2>HTTP/1.0</h2>
-          <p>This version added status codes and headers, which made responses clearer. It still opened a new connection for each request.</p>
+        <article class="definition-card">
+          <h2>2. HTTP</h2>
+          <p>HTTP is the protocol used for communication between a client, such as a browser, and a server.</p>
         </article>
-        <article class="content-card">
-          <h2>HTTP/1.1</h2>
-          <p>This update introduced persistent connections and better caching behavior. It stayed dominant for many years because it solved a huge performance problem.</p>
+        <article class="definition-card">
+          <h2>3. HTTPS</h2>
+          <p>HTTPS is the secure version of HTTP and uses TLS encryption to protect data in transit.</p>
         </article>
-        <article class="content-card">
-          <h2>HTTP/2</h2>
-          <p>HTTP/2 introduced multiplexing and binary framing so multiple transfers could share one connection more efficiently.</p>
+        <article class="definition-card">
+          <h2>4. DNS</h2>
+          <p>DNS translates human-friendly domain names into IP addresses that computers can route to.</p>
         </article>
-        <article class="content-card">
-          <h2>HTTP/3</h2>
-          <p>HTTP/3 maps HTTP semantics onto QUIC. That change lowers latency and helps more on weak or unstable networks.</p>
+        <article class="definition-card">
+          <h2>5. Request</h2>
+          <p>A request is the message the client sends when it wants a resource or wants the server to perform an action.</p>
+        </article>
+        <article class="definition-card">
+          <h2>6. Response</h2>
+          <p>A response is the server's reply, including a status code, headers, and often a body with content.</p>
         </article>
       </div>
     </section>
 
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Performance, security, and delivery terms</h2>
+        <p>These help explain why the modern web feels fast and secure.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="definition-card">
+          <h2>7. Status Code</h2>
+          <p>A numeric result that tells the browser whether a request succeeded, redirected, or failed.</p>
+        </article>
+        <article class="definition-card">
+          <h2>8. Caching</h2>
+          <p>Caching stores previously fetched content so it can be reused instead of downloaded again.</p>
+        </article>
+        <article class="definition-card">
+          <h2>9. Latency</h2>
+          <p>Latency is the delay between sending a request and beginning to receive the response.</p>
+        </article>
+        <article class="definition-card">
+          <h2>10. TLS</h2>
+          <p>TLS is the encryption protocol commonly used to secure HTTPS connections.</p>
+        </article>
+        <article class="definition-card">
+          <h2>11. Reverse Proxy</h2>
+          <p>A reverse proxy sits in front of back end services and forwards requests to the right destination.</p>
+        </article>
+        <article class="definition-card">
+          <h2>12. CDN</h2>
+          <p>A content delivery network stores copies of assets in multiple locations so users can fetch them from a closer server.</p>
+        </article>
+      </div>
+    </section>
+
+
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Server architecture terms</h2>
+        <p>These terms help explain how bigger websites stay organized and available.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="definition-card">
+          <h2>13. Load Balancer</h2>
+          <p>A load balancer spreads traffic across more than one server so one machine does not have to handle everything alone.</p>
+        </article>
+        <article class="definition-card">
+          <h2>14. API</h2>
+          <p>An API is a way for different programs to request and share data, often through HTTP requests.</p>
+        </article>
+        <article class="definition-card">
+          <h2>15. Static Content</h2>
+          <p>Static content is served as a ready-made file, such as an image, stylesheet, or simple HTML page.</p>
+        </article>
+        <article class="definition-card">
+          <h2>16. Dynamic Content</h2>
+          <p>Dynamic content is generated at request time, often by an app, script, database, or API.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- This table turns the glossary into a study guide by explaining why each idea matters. -->
     <section class="page-section table-wrap">
       <table>
-        <caption>HTTP version comparison</caption>
+        <caption>Why each concept matters</caption>
         <thead>
           <tr>
-            <th>Version</th>
-            <th>Main improvement</th>
-            <th>Transport note</th>
-            <th>Main reason to move forward</th>
+            <th>Concept</th>
+            <th>Why it matters</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>HTTP/0.9</td>
-            <td>Simple document retrieval</td>
-            <td>Very limited request and response format</td>
-            <td>No headers, no status codes, and only one method</td>
+            <td>Web Server</td>
+            <td>Without a server, there is nowhere for website content to be stored and delivered from.</td>
           </tr>
           <tr>
-            <td>HTTP/1.0</td>
-            <td>Headers and status codes</td>
-            <td>New connection per request</td>
-            <td>Too much overhead for pages with many resources</td>
+            <td>HTTP and HTTPS</td>
+            <td>These define how data moves and whether that communication is protected in transit.</td>
           </tr>
           <tr>
-            <td>HTTP/1.1</td>
-            <td>Persistent connections and improved caching</td>
-            <td>Still runs over TCP</td>
-            <td>Modern pages pushed it toward more efficient multiplexing</td>
+            <td>DNS</td>
+            <td>DNS makes the web human-friendly by letting people type names instead of raw numeric addresses.</td>
           </tr>
           <tr>
-            <td>HTTP/2</td>
-            <td>Multiplexing and binary framing</td>
-            <td>Still relies on TCP underneath</td>
-            <td>Needed better behavior under packet loss and lower setup latency</td>
+            <td>Request and Response</td>
+            <td>These two message types are the core cycle of web communication.</td>
           </tr>
           <tr>
-            <td>HTTP/3</td>
-            <td>Uses QUIC with lower latency</td>
-            <td>Runs over UDP through QUIC</td>
-            <td>Improves performance and connection recovery on modern networks</td>
+            <td>Status Code</td>
+            <td>Status codes help both browsers and developers quickly understand what happened.</td>
+          </tr>
+          <tr>
+            <td>Caching and CDN</td>
+            <td>These reduce repeated downloads and can move content closer to the user.</td>
+          </tr>
+          <tr>
+            <td>Latency and TLS</td>
+            <td>These strongly affect real-world speed and security.</td>
+          </tr>
+          <tr>
+            <td>Reverse Proxy</td>
+            <td>This helps scale, secure, and organize more complex web applications.</td>
+          </tr>
+          <tr>
+            <td>Load Balancer</td>
+            <td>This helps larger sites share traffic across multiple servers instead of relying on one system.</td>
+          </tr>
+          <tr>
+            <td>API</td>
+            <td>APIs explain how web apps request data and connect the front end to back end services.</td>
+          </tr>
+          <tr>
+            <td>Static and Dynamic Content</td>
+            <td>These explain the difference between files that are served directly and content created when a request happens.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section class="page-section two-column">
-      <article class="content-card">
-        <div class="section-heading">
-          <h2>What stayed the same</h2>
-          <p>New versions changed delivery, not the core idea.</p>
-        </div>
-        <ul>
-          <li>Browsers still send requests and servers still send responses.</li>
-          <li>Status codes, methods, and headers still matter.</li>
-          <li>The basic goal is still resource delivery between client and server.</li>
-        </ul>
-      </article>
-
-      <article class="content-card">
-        <div class="section-heading">
-          <h2>What changed the most</h2>
-          <p>Efficiency became the main theme of HTTP history.</p>
-        </div>
-        <ul>
-          <li>Fewer wasted connections</li>
-          <li>Better handling of many files at once</li>
-          <li>Lower latency on real-world networks</li>
-          <li>More practical performance for mobile browsing</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="page-section">
-      <div class="section-heading">
-        <h2>Why newer versions matter</h2>
-        <p>Protocol changes directly affect user experience.</p>
-      </div>
-      <div class="quick-facts">
-        <div class="fact">
-          <h3>Faster first load</h3>
-          <p>Lower latency and better connection handling help pages start rendering sooner.</p>
-        </div>
-        <div class="fact">
-          <h3>Better support for complex sites</h3>
-          <p>Modern pages pull many assets, and newer HTTP versions are better at handling that complexity.</p>
-        </div>
-        <div class="fact">
-          <h3>Stronger modern networking</h3>
-          <p>HTTP/3 works with QUIC, which improves connection behavior on unstable networks and wireless connections.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="page-section callout">
-      <h2>Big idea</h2>
-      <p>HTTP history is really the story of the web adapting to its own success. As users expected richer pages, stronger security, and faster performance, the protocol had to keep getting smarter without breaking the basic request-and-response model that made the web work in the first place.</p>
+      <h2>Study tip</h2>
+      <p>If you can explain the difference between DNS, HTTP, a status code, a reverse proxy, caching, and dynamic content in your own words, you already understand a big part of how the web works behind the scenes.</p>
     </section>
   </main>
 
+  <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
   <footer class="page-footer">
     <div class="footer-inner">
       <p><strong>Web Servers and HTTP</strong> class project site.</p>

@@ -3,119 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About page for the student and class project.">
-  <title>Web Servers and HTTP | About</title>
+  <meta name="description" content="Topic page describing the evolution of HTTP.">
+  <title>Web Servers and HTTP | HTTP Evolution</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
- <!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
+  <!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
-   <!-- This header stays the same on every page so the site feels connected and easier to move through. -->
   <header class="site-header">
     <div class="header-inner">
       <div class="branding">
         <a id="site-title" href="index.html">Web Servers and HTTP</a>
         <p>Intro to Web Development class project</p>
       </div>
-	  <!-- Main navigation stays consistent on every page -->
+      <!-- Main navigation stays consistent on every page -->
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="http-evolution.html">HTTP Evolution</a></li>
+          <li><a href="http-evolution.html" class="active">HTTP Evolution</a></li>
           <li><a href="web-servers.html">Web Servers</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
           <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
-          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  
- <!-- This page mixes a short intro with project progress so it feels more personal and not just like a plain bio page. -->
+
+  <!-- This page uses a timeline, cards, and a comparison table because HTTP versions are easier to understand side by side. -->
   <main id="main-content" class="page-shell">
     <section class="hero">
-      <div class="hero-grid author-hero">
-        <div>
-          <p class="eyebrow">About page</p>
-          <h1>About the Student and Project</h1>
-          <p class="subhead">This page introduces the author, explains the purpose of the project, and highlights the main improvements made as the site moved from a basic essay conversion into a more complete web study resource.</p>
-          <div class="badge-row">
-            <span class="badge">Semantic HTML</span>
-            <span class="badge">CSS Layout</span>
-            <span class="badge">JavaScript Quiz</span>
-            <span class="badge">Research Writing</span>
-          </div>
-        </div>
-        <figure class="figure-card">
-          <img class="author-image" src="images/KeyvonImage.png" alt="Portrait of Keyvon Thompson.">
-          <figcaption>Keyvon Thompson, creator of this class project website.</figcaption>
-        </figure>
+      <p class="eyebrow">Topic page 2</p>
+      <h1>The Evolution of HTTP</h1>
+      <p class="subhead">HTTP started as a very simple protocol for fetching documents. As sites became larger, faster, and more interactive, the protocol had to improve too. Each major version solved a different kind of communication problem.</p>
+    </section>
+
+    <!-- The image gives a quick visual summary before the more detailed version notes. -->
+    <section class="page-section figure-card">
+      <img src="images/http-timeline.png" alt="Timeline showing HTTP versions 0.9, 1.0, 1.1, 2, and 3.">
+      <figcaption>Each major version kept the same main goal but changed how efficiently requests and responses move across the network.</figcaption>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Version highlights</h2>
+        <p>These short summaries show why each version mattered.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="content-card">
+          <h2>HTTP/0.9</h2>
+          <p>The earliest version was extremely basic. It only supported the <code>GET</code> method and had no status codes or headers.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/1.0</h2>
+          <p>This version added status codes and headers, which made responses clearer. It still opened a new connection for each request.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/1.1</h2>
+          <p>This update introduced persistent connections and better caching behavior. It stayed dominant for many years because it solved a huge performance problem.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/2</h2>
+          <p>HTTP/2 introduced multiplexing and binary framing so multiple transfers could share one connection more efficiently.</p>
+        </article>
+        <article class="content-card">
+          <h2>HTTP/3</h2>
+          <p>HTTP/3 maps HTTP semantics onto QUIC. That change lowers latency and helps more on weak or unstable networks.</p>
+        </article>
       </div>
     </section>
 
-    <section class="page-section two-column">
-      <article class="resume-card">
-        <div class="section-heading">
-          <h2>Mini resume</h2>
-          <p>Basic information about the project author.</p>
-        </div>
-        <p><strong>Name:</strong> Keyvon Thompson</p>
-        <p><strong>Course:</strong> Intro to Web Development</p>
-        <p><strong>Project topic:</strong> Web servers and HTTP</p>
-        <p><strong>Current focus:</strong> Learning how websites work behind the scenes and presenting research in a cleaner, more usable web format.</p>
-      </article>
-
-      <article class="resume-card">
-        <div class="section-heading">
-          <h2>Project goals</h2>
-          <p>What this site is trying to do well.</p>
-        </div>
-        <ul>
-          <li>Turn research writing into a multi-page website that is easy to explore.</li>
-          <li>Practice semantic HTML, layout, navigation, responsive styling, and light JavaScript.</li>
-          <li>Create a site that feels more like a real study resource than a plain assignment upload.</li>
-        </ul>
-      </article>
-    </section>
-
-   <section class="table-wrap">
+    <!-- This table is here so the reader can compare each HTTP version without rereading every paragraph. -->
+    <section class="page-section table-wrap">
       <table>
-        <caption>Skills practiced in this project</caption>
+        <caption>HTTP version comparison</caption>
         <thead>
           <tr>
-            <th>Skill Area</th>
-            <th>How it appears in this site</th>
+            <th>Version</th>
+            <th>Main improvement</th>
+            <th>Transport note</th>
+            <th>Main reason to move forward</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Semantic HTML</td>
-            <td>Pages use headers, navigation, sections, figures, lists, and tables.</td>
+            <td>HTTP/0.9</td>
+            <td>Simple document retrieval</td>
+            <td>Very limited request and response format</td>
+            <td>No headers, no status codes, and only one method</td>
           </tr>
           <tr>
-            <td>CSS Styling</td>
-            <td>One shared stylesheet controls layout, spacing, hover effects, colors, and responsiveness.</td>
+            <td>HTTP/1.0</td>
+            <td>Headers and status codes</td>
+            <td>New connection per request</td>
+            <td>Too much overhead for pages with many resources</td>
           </tr>
           <tr>
-            <td>Content Organization</td>
-            <td>The research topic is split into focused pages so readers can move through the material more easily.</td>
+            <td>HTTP/1.1</td>
+            <td>Persistent connections and improved caching</td>
+            <td>Still runs over TCP</td>
+            <td>Modern pages pushed it toward more efficient multiplexing</td>
           </tr>
           <tr>
-            <td>User Experience</td>
-            <td>The site uses a consistent menu, readable spacing, and responsive layouts for smaller screens.</td>
+            <td>HTTP/2</td>
+            <td>Multiplexing and binary framing</td>
+            <td>Still relies on TCP underneath</td>
+            <td>Needed better behavior under packet loss and lower setup latency</td>
+          </tr>
+          <tr>
+            <td>HTTP/3</td>
+            <td>Uses QUIC with lower latency</td>
+            <td>Runs over UDP through QUIC</td>
+            <td>Improves performance and connection recovery on modern networks</td>
           </tr>
         </tbody>
       </table>
     </section>
 
+    <section class="page-section two-column">
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>What stayed the same</h2>
+          <p>New versions changed delivery, not the core idea.</p>
+        </div>
+        <ul>
+          <li>Browsers still send requests and servers still send responses.</li>
+          <li>Status codes, methods, and headers still matter.</li>
+          <li>The basic goal is still resource delivery between client and server.</li>
+        </ul>
+      </article>
+
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>What changed the most</h2>
+          <p>Efficiency became the main theme of HTTP history.</p>
+        </div>
+        <ul>
+          <li>Fewer wasted connections</li>
+          <li>Better handling of many files at once</li>
+          <li>Lower latency on real-world networks</li>
+          <li>More practical performance for mobile browsing</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Why newer versions matter</h2>
+        <p>Protocol changes directly affect user experience.</p>
+      </div>
+      <div class="quick-facts">
+        <div class="fact">
+          <h3>Faster first load</h3>
+          <p>Lower latency and better connection handling help pages start rendering sooner.</p>
+        </div>
+        <div class="fact">
+          <h3>Better support for complex sites</h3>
+          <p>Modern pages pull many assets, and newer HTTP versions are better at handling that complexity.</p>
+        </div>
+        <div class="fact">
+          <h3>Stronger modern networking</h3>
+          <p>HTTP/3 works with QUIC, which improves connection behavior on unstable networks and wireless connections.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="page-section callout">
-      <h2>Author statement</h2>
-      <p>I chose this topic because people use the internet all the time without usually thinking about the systems that make it work. Building this site helped me take a topic that could have felt abstract and break it into smaller pages that are easier to read, understand, and study from later.</p>
+      <h2>Big idea</h2>
+      <p>HTTP history is really the story of the web adapting to its own success. As users expected richer pages, stronger security, and faster performance, the protocol had to keep getting smarter without breaking the basic request-and-response model that made the web work in the first place.</p>
     </section>
   </main>
- <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
+
+  <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
   <footer class="page-footer">
     <div class="footer-inner">
       <p><strong>Web Servers and HTTP</strong> class project site.</p>

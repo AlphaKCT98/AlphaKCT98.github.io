@@ -3,94 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="References and learning resources page for a web servers and HTTP project.">
-  <title>Web Servers and HTTP | References</title>
+  <meta name="description" content="Topic page explaining web server history and modern roles.">
+  <title>Web Servers and HTTP | Web Servers</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
+<!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <!-- This header stays the same on every page so the site feels connected and easier to move through. -->
   <header class="site-header">
     <div class="header-inner">
       <div class="branding">
         <a id="site-title" href="index.html">Web Servers and HTTP</a>
         <p>Intro to Web Development class project</p>
       </div>
+	  <!-- Main navigation stays consistent on every page -->
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
           <li><a href="http-evolution.html">HTTP Evolution</a></li>
-          <li><a href="web-servers.html">Web Servers</a></li>
+          <li><a href="web-servers.html" class="active">Web Servers</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
           <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="references.html" class="active">References</a></li>
+          <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
+<!-- I split this page into server roles, examples, and modern uses because that felt like the clearest way to explain it. -->
   <main id="main-content" class="page-shell">
     <section class="hero">
-      <p class="eyebrow">References and further learning</p>
-      <h1>References and Learning Resources</h1>
-      <p class="subhead">This page collects the sources from the original paper and adds more official documentation so the site can support stronger research and deeper study.</p>
-    </section>
-
-    <section class="page-section two-column">
-      <article class="content-card link-section">
-        <div class="section-heading">
-          <h2>Official documentation and standards</h2>
-          <p>These are the strongest sources for technical study.</p>
-        </div>
-        <ol class="resource-list">
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview" target="_blank" rel="noopener noreferrer">MDN Web Docs: Overview of HTTP</a> - clear overview of HTTP as a client-server protocol and how a document is built from many resources.</li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTTP Messages</a> - explains requests, responses, headers, and bodies.</li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTTP Response Status Codes</a> - quick reference for common HTTP results and their categories.</li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP" target="_blank" rel="noopener noreferrer">MDN Web Docs: Evolution of HTTP</a> - useful summary of major protocol changes.</li>
-          <li><a href="https://datatracker.ietf.org/doc/html/rfc9114" target="_blank" rel="noopener noreferrer">IETF RFC 9114: HTTP/3</a> - formal standard describing HTTP/3 over QUIC.</li>
-          <li><a href="https://www.icann.org/resources/pages/dns-2022-09-13-en" target="_blank" rel="noopener noreferrer">ICANN: The Domain Name System</a> - official explanation of how DNS helps users navigate the internet.</li>
-          <li><a href="https://httpd.apache.org/docs/" target="_blank" rel="noopener noreferrer">Apache HTTP Server Documentation</a> - official documentation for Apache.</li>
-          <li><a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreferrer">NGINX Documentation</a> - official docs for request handling, proxying, HTTPS, and load balancing.</li>
-          <li><a href="https://learn.microsoft.com/en-us/iis/" target="_blank" rel="noopener noreferrer">Microsoft IIS Documentation</a> - official overview and administration resources for IIS.</li>
-        </ol>
-      </article>
-
-      <article class="content-card link-section">
-        <div class="section-heading">
-          <h2>Supporting background sources</h2>
-          <p>These are useful for history and broader context.</p>
-        </div>
-        <ol class="resource-list">
-          <li><a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank" rel="noopener noreferrer">Apache HTTP Server</a> - historical background on Apache's role in the web.</li>
-          <li><a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface" target="_blank" rel="noopener noreferrer">Common Gateway Interface</a> - background on an early approach to dynamic content.</li>
-          <li><a href="https://en.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener noreferrer">HTTP</a> - broad background on the protocol.</li>
-          <li><a href="https://en.wikipedia.org/wiki/NCSA_HTTPd" target="_blank" rel="noopener noreferrer">NCSA HTTPd</a> - useful history for early server development.</li>
-          <li><a href="https://www.techtarget.com/whatis/definition/Web-server" target="_blank" rel="noopener noreferrer">TechTarget: What Is a Web Server?</a> - beginner-friendly explanation of web server purpose and roles.</li>
-          <li><a href="https://en.wikipedia.org/wiki/Web_server" target="_blank" rel="noopener noreferrer">Web Server</a> - broad background on web server hardware and software.</li>
-        </ol>
-      </article>
+      <p class="eyebrow">Topic page 3</p>
+      <h1>Web Servers Then and Now</h1>
+      <p class="subhead">A web server can mean either hardware or software. The hardware stores resources and stays connected to the network. The software listens for requests and decides how those requests should be handled.</p>
     </section>
 
     <section class="page-section two-column">
       <article class="content-card">
         <div class="section-heading">
-          <h2>Extra learning resources</h2>
-          <p>These help connect the topic to broader web development study.</p>
+          <h2>Hardware vs software</h2>
+          <p>The same term gets used in two related ways.</p>
         </div>
-        <ul class="compact-list">
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods" target="_blank" rel="noopener noreferrer">MDN: HTTP request methods</a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Resources_and_specifications" target="_blank" rel="noopener noreferrer">MDN: HTTP resources and specifications</a></li>
-          <li><a href="https://nginx.org/en/docs/http/load_balancing.html" target="_blank" rel="noopener noreferrer">NGINX: Using nginx as HTTP load balancer</a></li>
-          <li><a href="https://httpd.apache.org/docs/2.4/mpm.html" target="_blank" rel="noopener noreferrer">Apache: Multi-Processing Modules</a></li>
-          <li><a href="https://learn.microsoft.com/en-us/iis/get-started/introduction-to-iis/iis-modules-overview" target="_blank" rel="noopener noreferrer">Microsoft: IIS Modules Overview</a></li>
+        <ul>
+          <li><strong>Hardware view:</strong> a machine that stores website files and remains available to clients over the internet.</li>
+          <li><strong>Software view:</strong> the program that accepts requests, applies rules, and returns content or errors.</li>
+        </ul>
+        <p class="small-text">In modern hosting, both ideas still matter, even when the physical machine is hidden behind cloud services.</p>
+      </article>
+
+      <figure class="figure-card">
+        <img src="images/server-comparison.png" alt="Graphic comparing Apache, Nginx, and IIS web servers.">
+        <figcaption>Different server software solves similar jobs, but each one is known for different strengths.</figcaption>
+      </figure>
+    </section>
+
+    <section class="page-section two-column">
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>Important server software</h2>
+          <p>These examples show how server design changed over time.</p>
+        </div>
+        <ul>
+          <li><strong>NCSA HTTPd:</strong> an early server that helped shape dynamic content support through CGI.</li>
+          <li><strong>Apache HTTP Server:</strong> open source, highly modular, and historically one of the most influential servers on the web.</li>
+          <li><strong>Nginx:</strong> known for performance, scalability, reverse proxy use, and event-driven design.</li>
+          <li><strong>IIS:</strong> Microsoft's server platform, often used in Windows-based and enterprise environments.</li>
         </ul>
       </article>
 
-      
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>Static content vs dynamic content</h2>
+          <p>Servers often handle both kinds of output.</p>
+        </div>
+        <ul>
+          <li><strong>Static content:</strong> files served directly, such as HTML, CSS, images, or videos.</li>
+          <li><strong>Dynamic content:</strong> output generated by an application, API, or script at request time.</li>
+        </ul>
+        <div class="note-box">
+          A modern website often uses both. The server might send a static image while also proxying a dynamic API request to another application.
+        </div>
+      </article>
+    </section>
+
+    <section class="page-section table-wrap">
+      <table>
+        <caption>Server comparison</caption>
+        <thead>
+          <tr>
+            <th>Server</th>
+            <th>Known for</th>
+            <th>Common use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apache</td>
+            <td>Open source flexibility and a very large module ecosystem</td>
+            <td>Shared hosting, legacy systems, and highly customizable setups</td>
+          </tr>
+          <tr>
+            <td>Nginx</td>
+            <td>Handling many simultaneous connections efficiently</td>
+            <td>High traffic sites, reverse proxy work, load balancing, and caching</td>
+          </tr>
+          <tr>
+            <td>IIS</td>
+            <td>Windows integration and enterprise administration tools</td>
+            <td>Corporate, internal, and government web infrastructure</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>What modern web servers commonly do</h2>
+        <p>Today's servers are more than file cabinets for HTML.</p>
+      </div>
+      <div class="summary-grid">
+        <div class="highlight-box">
+          <h3>Serve content</h3>
+          <p>They return HTML, CSS, JavaScript, images, video, and downloads.</p>
+        </div>
+        <div class="highlight-box">
+          <h3>Handle HTTPS</h3>
+          <p>They manage encrypted traffic so data can move securely between users and sites.</p>
+        </div>
+        <div class="highlight-box">
+          <h3>Proxy requests</h3>
+          <p>They can pass traffic to application servers, APIs, or services behind the front door.</p>
+        </div>
+        <div class="highlight-box">
+          <h3>Improve performance</h3>
+          <p>They can cache files, compress responses, and balance traffic across multiple systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section two-column">
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>Why reverse proxies matter</h2>
+          <p>One server does not always do every job alone.</p>
+        </div>
+        <p>A reverse proxy sits in front of one or more application servers. It receives requests from users and forwards them to the right back end service. This design helps with traffic management, security, scaling, and load balancing.</p>
+      </article>
+
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>Where servers fit today</h2>
+          <p>Cloud platforms changed deployment, not the core role.</p>
+        </div>
+        <p>Even with cloud hosting and content delivery networks, someone still has to receive requests, decide where they go, and return the right resources. The basic job of the web server still sits at the center of modern web architecture.</p>
+      </article>
+    </section>
+
+    <section class="page-section callout">
+      <h2>Why web servers still matter</h2>
+      <p>As websites became applications instead of simple documents, servers became traffic managers, security checkpoints, caching layers, and connectors to back end systems. That makes them just as important now as they were in the early web, even if most users never see them directly.</p>
     </section>
   </main>
 
+<!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
   <footer class="page-footer">
     <div class="footer-inner">
       <p><strong>Web Servers and HTTP</strong> class project site.</p>
