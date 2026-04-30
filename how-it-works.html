@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Topic page explaining how web requests and responses work.">
-  <title>Web Servers and HTTP | How It Works</title>
+  <meta name="description" content="About page for the student and class project.">
+  <title>Web Servers and HTTP | About</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
-<!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
+ <!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
    <!-- This header stays the same on every page so the site feels connected and easier to move through. -->
   <header class="site-header">
@@ -17,169 +17,106 @@
         <a id="site-title" href="index.html">Web Servers and HTTP</a>
         <p>Intro to Web Development class project</p>
       </div>
-	   <!-- Main navigation stays consistent on every page -->
+	  <!-- Main navigation stays consistent on every page -->
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="how-it-works.html" class="active">How It Works</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
           <li><a href="http-evolution.html">HTTP Evolution</a></li>
           <li><a href="web-servers.html">Web Servers</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
           <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" class="active">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
-<!-- The main content here breaks the request cycle into smaller chunks so I think it is easier to study step by step. -->
+  
+ <!-- This page mixes a short intro with project progress so it feels more personal and not just like a plain bio page. -->
   <main id="main-content" class="page-shell">
     <section class="hero">
-      <p class="eyebrow">Topic page 1</p>
-      <h1>How the Web Request Process Works</h1>
-      <p class="subhead">When a user opens a website, the browser does not magically know where everything is. It follows a chain of steps that includes DNS lookup, HTTP messaging, server processing, and browser rendering.</p>
+      <div class="hero-grid author-hero">
+        <div>
+          <p class="eyebrow">About page</p>
+          <h1>About the Student and Project</h1>
+          <p class="subhead">This page introduces the author, explains the purpose of the project.</p>
+          <div class="badge-row">
+            <span class="badge">Semantic HTML</span>
+            <span class="badge">CSS Layout</span>
+            <span class="badge">JavaScript Quiz</span>
+            <span class="badge">Research Writing</span>
+          </div>
+        </div>
+        <figure class="figure-card">
+          <img class="author-image" src="images/KeyvonImage.png" alt="Portrait of Keyvon Thompson.">
+          <figcaption>Keyvon Thompson, creator of this class project website.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="page-section two-column">
-      <article class="content-card">
+      <article class="resume-card">
         <div class="section-heading">
-          <h2>Step-by-step request cycle</h2>
-          <p>These actions usually happen in seconds.</p>
+          <h2>Mini resume</h2>
+          <p>Basic information about the project author.</p>
         </div>
-        <ol>
-          <li><strong>The user enters a URL.</strong> The browser reads the address and decides what resource is being requested.</li>
-          <li><strong>DNS resolves the domain.</strong> The browser finds the IP address for the domain name.</li>
-          <li><strong>A connection is opened.</strong> The browser and server establish a network path. If the site uses HTTPS, a TLS handshake is also part of this stage.</li>
-          <li><strong>The browser sends an HTTP request.</strong> This request asks for a page, image, stylesheet, script, or another file.</li>
-          <li><strong>The web server processes the request.</strong> It decides whether to serve a static file, run code, call an application, or return an error.</li>
-          <li><strong>The server sends an HTTP response.</strong> The response includes a status code, headers, and often a response body.</li>
-          <li><strong>The browser renders the page.</strong> It parses HTML and then loads linked CSS, images, fonts, and scripts.</li>
-        </ol>
+        <p><strong>Name:</strong> Keyvon Thompson</p>
+        <p><strong>Course:</strong> Intro to Web Development</p>
+        <p><strong>Project topic:</strong> Web servers and HTTP</p>
+        <p><strong>Current focus:</strong> Learning how websites work behind the scenes.</p>
       </article>
 
-      <figure class="figure-card">
-        <img src="images/request-response.png" alt="Diagram of browser request, DNS lookup, web server processing, and HTTP response.">
-        <figcaption>The browser, DNS, and server each handle part of the same request cycle.</figcaption>
-      </figure>
-    </section>
-
-    <section class="page-section two-column">
-      <article class="content-card">
+      <article class="resume-card">
         <div class="section-heading">
-          <h2>What comes before HTTP?</h2>
-          <p>HTTP is central, but it is not the only thing happening.</p>
+          <h2>Project goals</h2>
+          <p>What this site is trying to do.</p>
         </div>
         <ul>
-          <li><strong>DNS:</strong> maps a readable domain like <code>example.com</code> to the server's IP address.</li>
-          <li><strong>TCP or QUIC:</strong> provides the transport layer underneath the HTTP conversation.</li>
-          <li><strong>TLS:</strong> encrypts data when a site uses HTTPS.</li>
-        </ul>
-        <p class="small-text">This is why page speed depends on more than just the HTML file itself. Lookup time, connection setup, encryption, and the number of resources all matter.</p>
-      </article>
-
-      <article class="content-card">
-        <div class="section-heading">
-          <h2>What comes after the first response?</h2>
-          <p>One page usually leads to many more requests.</p>
-        </div>
-        <p>The first HTML file often tells the browser to fetch additional assets such as stylesheets, JavaScript files, images, fonts, and video. A page that looks like a single thing to the user can actually be assembled from many individual requests and responses.</p>
-        <div class="note-box">
-          Browsers can also cache files. If an asset is already cached and still fresh, the browser may not need to download it again.
-        </div>
-      </article>
-    </section>
-
-    <section class="page-section two-column">
-      <article class="content-card">
-        <div class="section-heading">
-          <h2>What is inside an HTTP request?</h2>
-          <p>A request tells the server what the client wants.</p>
-        </div>
-        <ul>
-          <li><strong>Method:</strong> the action being requested, such as <code>GET</code> or <code>POST</code></li>
-          <li><strong>Target resource:</strong> the path or URL for the file or endpoint</li>
-          <li><strong>Headers:</strong> details about accepted formats, language, caching rules, or the browser itself</li>
-          <li><strong>Body:</strong> optional data, often used with forms or APIs</li>
-        </ul>
-      </article>
-
-      <article class="content-card">
-        <div class="section-heading">
-          <h2>What is inside an HTTP response?</h2>
-          <p>A response tells the browser what happened and sends data back.</p>
-        </div>
-        <ul>
-          <li><strong>Status code:</strong> a short result such as <code>200</code> or <code>404</code></li>
-          <li><strong>Headers:</strong> metadata about the response, caching, type, and security rules</li>
-          <li><strong>Body:</strong> the actual content such as HTML, JSON, an image, or a file download</li>
+          <li>Turn my research writing into a website that is easy to explore.</li>
+          <li>Practice semantic HTML, layout, navigation, responsive styling, and light JavaScript.</li>
+          <li>Create a site that feels more like a real study resource.</li>
         </ul>
       </article>
     </section>
 
-    <section class="page-section table-wrap">
+   <section class="table-wrap">
       <table>
-        <caption>Common status codes</caption>
+        <caption>Skills practiced in this project</caption>
         <thead>
           <tr>
-            <th>Status code</th>
-            <th>Meaning</th>
-            <th>Example</th>
+            <th>Skill Area</th>
+            <th>How it appears in this site</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>200</td>
-            <td>Success</td>
-            <td>The page or file was found and returned correctly.</td>
+            <td>Semantic HTML</td>
+            <td>Pages use headers, navigation, sections, figures, lists, and tables.</td>
           </tr>
           <tr>
-            <td>301</td>
-            <td>Moved permanently</td>
-            <td>The browser is redirected to a new address.</td>
+            <td>CSS Styling</td>
+            <td>One shared stylesheet controls layout, spacing, hover effects, colors, and responsiveness.</td>
           </tr>
           <tr>
-            <td>404</td>
-            <td>Not found</td>
-            <td>The resource does not exist at the requested path.</td>
+            <td>Responsive Design</td>
+            <td>Media queries adjust the layout, menu, images, tables, and quiz form for tablet and phone screens.</td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Internal server error</td>
-            <td>The server encountered a problem while processing the request.</td>
+            <td>Content Organization</td>
+            <td>The research topic is split into focused pages so readers can move through the material more easily.</td>
+          </tr>
+          <tr>
+            <td>User Experience</td>
+            <td>The site uses a consistent menu, readable spacing, and responsive layouts for smaller screens.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section class="page-section">
-      <div class="section-heading">
-        <h2>What affects web speed?</h2>
-        <p>Performance is shaped by both network and server behavior.</p>
-      </div>
-      <div class="summary-grid">
-        <div class="highlight-box">
-          <h3>Latency</h3>
-          <p>The longer it takes signals to travel between browser and server, the slower requests feel.</p>
-        </div>
-        <div class="highlight-box">
-          <h3>Number of files</h3>
-          <p>More images, scripts, and fonts usually mean more work for the browser and the network.</p>
-        </div>
-        <div class="highlight-box">
-          <h3>Caching</h3>
-          <p>Good caching reduces repeated downloads and makes repeat visits much faster.</p>
-        </div>
-        <div class="highlight-box">
-          <h3>Compression</h3>
-          <p>Compressed files move faster because the browser has less data to download.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="page-section callout">
-      <h2>Why developers should care</h2>
-      <p>Understanding the request cycle helps developers debug broken pages, missing files, slow loading times, and server-side problems. It also makes later topics such as APIs, databases, deployment, and performance optimization much easier to understand.</p>
+      <h2>Author statement</h2>
+      <p>I chose this topic because people use the internet all the time without usually thinking about the systems that make it work. Building this site helped me take a topic that could have felt abstract and break it into smaller pages that are easier to read, understand, and study from later.</p>
     </section>
   </main>
  <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->

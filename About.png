@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="References and learning resources page for a web servers and HTTP project.">
+  <title>Web Servers and HTTP | References</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="branding">
+        <a id="site-title" href="index.html">Web Servers and HTTP</a>
+        <p>Intro to Web Development class project</p>
+      </div>
+      <!-- Main navigation stays consistent on every page -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="http-evolution.html">HTTP Evolution</a></li>
+          <li><a href="web-servers.html">Web Servers</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html" class="active">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- I separated official documentation from background sources because I think that makes the research easier to judge. -->
+  <main id="main-content" class="page-shell">
+    <section class="hero">
+      <p class="eyebrow">References and further learning</p>
+      <h1>References and Learning Resources</h1>
+      <p class="subhead">This Page lists out the references,articles, and wikipedia pages used</p>
+    </section>
+
+    <section class="page-section two-column">
+      <!-- These official sources are the main support for the technical parts of the project. -->
+      <article class="content-card link-section">
+        <div class="section-heading">
+          <h2>Official documentation and standards</h2>
+          <p>These are the strongest sources for technical study.</p>
+        </div>
+        <ol class="resource-list">
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview" target="_blank" rel="noopener noreferrer">MDN Web Docs: Overview of HTTP</a> - clear overview of HTTP as a client-server protocol and how a document is built from many resources.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTTP Messages</a> - explains requests, responses, headers, and bodies.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTTP Response Status Codes</a> - quick reference for common HTTP results and their categories.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP" target="_blank" rel="noopener noreferrer">MDN Web Docs: Evolution of HTTP</a> - useful summary of major protocol changes.</li>
+          <li><a href="https://datatracker.ietf.org/doc/html/rfc9114" target="_blank" rel="noopener noreferrer">IETF RFC 9114: HTTP/3</a> - formal standard describing HTTP/3 over QUIC.</li>
+          <li><a href="https://www.icann.org/resources/pages/dns-2022-09-13-en" target="_blank" rel="noopener noreferrer">ICANN: The Domain Name System</a> - official explanation of how DNS helps users navigate the internet.</li>
+          <li><a href="https://httpd.apache.org/docs/" target="_blank" rel="noopener noreferrer">Apache HTTP Server Documentation</a> - official documentation for Apache.</li>
+          <li><a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreferrer">NGINX Documentation</a> - official docs for request handling, proxying, HTTPS, and load balancing.</li>
+          <li><a href="https://learn.microsoft.com/en-us/iis/" target="_blank" rel="noopener noreferrer">Microsoft IIS Documentation</a> - official overview and administration resources for IIS.</li>
+        </ol>
+      </article>
+
+      <!-- These sources help with history and context, but I would treat the official docs as stronger for technical details. -->
+      <article class="content-card link-section">
+        <div class="section-heading">
+          <h2>Supporting background sources</h2>
+          <p>These are useful for history and broader context.</p>
+        </div>
+        <ol class="resource-list">
+          <li><a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank" rel="noopener noreferrer">Apache HTTP Server</a> - historical background on Apache's role in the web.</li>
+          <li><a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface" target="_blank" rel="noopener noreferrer">Common Gateway Interface</a> - background on an early approach to dynamic content.</li>
+          <li><a href="https://en.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener noreferrer">HTTP</a> - broad background on the protocol.</li>
+          <li><a href="https://en.wikipedia.org/wiki/NCSA_HTTPd" target="_blank" rel="noopener noreferrer">NCSA HTTPd</a> - useful history for early server development.</li>
+          <li><a href="https://www.techtarget.com/whatis/definition/Web-server" target="_blank" rel="noopener noreferrer">TechTarget: What Is a Web Server?</a> - beginner-friendly explanation of web server purpose and roles.</li>
+          <li><a href="https://en.wikipedia.org/wiki/Web_server" target="_blank" rel="noopener noreferrer">Web Server</a> - broad background on web server hardware and software.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="page-section two-column">
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>Extra learning resources</h2>
+          <p>These help connect the topic to broader web development study.</p>
+        </div>
+        <ul class="compact-list">
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods" target="_blank" rel="noopener noreferrer">MDN: HTTP request methods</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Resources_and_specifications" target="_blank" rel="noopener noreferrer">MDN: HTTP resources and specifications</a></li>
+          <li><a href="https://nginx.org/en/docs/http/load_balancing.html" target="_blank" rel="noopener noreferrer">NGINX: Using nginx as HTTP load balancer</a></li>
+          <li><a href="https://httpd.apache.org/docs/2.4/mpm.html" target="_blank" rel="noopener noreferrer">Apache: Multi-Processing Modules</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/iis/get-started/introduction-to-iis/iis-modules-overview" target="_blank" rel="noopener noreferrer">Microsoft: IIS Modules Overview</a></li>
+        </ul>
+      </article>
+
+      <article class="content-card">
+        <div class="section-heading">
+          <h2>How I finalized the research</h2>
+          <p>This short note explains how the sources connect to the pages.</p>
+        </div>
+        <ul class="compact-list">
+          <li><strong>How It Works:</strong> mostly supported by HTTP message, DNS, and status code references.</li>
+          <li><strong>HTTP Evolution:</strong> supported by MDN's HTTP history guide and the HTTP/3 standard.</li>
+          <li><strong>Web Servers:</strong> supported by Apache, NGINX, IIS, and web server background sources.</li>
+          <li><strong>Key Concepts:</strong> built from the main terms that repeat across the research.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <p><strong>Web Servers and HTTP</strong> class project site.</p>
+      <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="references.html">References</a>
+          <a href="about.html">About</a>
+          <a href="#top">Back to top</a>
+      </div>
+      <div id="project-note">
+        This website was created as a class project for Intro to Web Development. Visit the course website here:
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 class site</a>.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

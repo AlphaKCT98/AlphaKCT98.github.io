@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Self-assessment quiz about web servers and HTTP.">
-  <title>Web Servers and HTTP | Quiz</title>
+  <meta name="description" content="Page defining key concepts related to web servers and HTTP.">
+  <title>Web Servers and HTTP | Key Concepts</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
-<!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
+  <!-- I kept the skip link near the top because I think it makes the page easier to use for keyboard navigation. -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <!-- This header stays the same on every page so the site feels connected and easier to move through. -->
   <header class="site-header">
     <div class="header-inner">
       <div class="branding">
         <a id="site-title" href="index.html">Web Servers and HTTP</a>
         <p>Intro to Web Development class project</p>
       </div>
-	  <!-- Main navigation stays consistent on every page -->
+      <!-- Main navigation stays consistent on every page -->
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
           <li><a href="http-evolution.html">HTTP Evolution</a></li>
           <li><a href="web-servers.html">Web Servers</a></li>
-          <li><a href="key-concepts.html">Key Concepts</a></li>
-          <li><a href="quiz.html" class="active">Quiz</a></li>
+          <li><a href="key-concepts.html" class="active">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -33,134 +32,173 @@
     </div>
   </header>
 
-  <!-- The quiz form lives in the main area, and the results section stays hidden until JavaScript fills it in after submission. -->
+  <!-- This page acts like a glossary, so I grouped the terms by what they help explain. -->
   <main id="main-content" class="page-shell">
     <section class="hero">
-      <p class="eyebrow">Self-assessment page</p>
-      <h1>Self-Assessment Quiz</h1>
-      <p class="subhead">Use this quiz to check how well you understand the main ideas from the site. It includes a fill-in-the-blank question, single-answer multiple-choice questions, and one multi-selection question.</p>
+      <p class="eyebrow">Glossary and study page</p>
+      <h1>Key Concepts</h1>
+      <p class="subhead">These terms build the foundation for understanding how web servers and HTTP work.</p>
     </section>
 
-    <section class="page-section two-column quiz-layout">
-      <article class="content-card">
-        <div class="section-heading">
-          <h2>Before you start</h2>
-          <p>This page is meant to work like a study check, not a trick test.</p>
-        </div>
-        <ul>
-          <li>Read each question carefully before answering.</li>
-          <li>Questions 2 through 5 use radio buttons because only one answer is correct.</li>
-          <li>Question 6 uses checkboxes because more than one answer is correct.</li>
-          <li>Your results will appear on the same page right after you submit the quiz.</li>
-        </ul>
-      </article>
-
-      <article class="content-card">
-        <div class="section-heading">
-          <h2>Quick study guide</h2>
-          <p>Review these pages if you want a refresher first.</p>
-        </div>
-        <div class="study-grid">
-          <div class="study-card">
-            <h3>Need the request cycle?</h3>
-            <p><a href="how-it-works.html">Read How It Works</a></p>
-          </div>
-          <div class="study-card">
-            <h3>Need version history?</h3>
-            <p><a href="http-evolution.html">Read HTTP Evolution</a></p>
-          </div>
-          <div class="study-card">
-            <h3>Need server roles?</h3>
-            <p><a href="web-servers.html">Read Web Servers</a></p>
-          </div>
-          <div class="study-card">
-            <h3>Need definitions?</h3>
-            <p><a href="key-concepts.html">Read Key Concepts</a></p>
-          </div>
-        </div>
-      </article>
-    </section>
-	<!-- Quiz form starts here -->
-    <!-- The form uses fieldsets to group questions, which I think makes the quiz feel cleaner and easier to follow. -->
-
-    <form id="quiz-form" class="quiz-form" novalidate>
-      <fieldset class="quiz-fieldset">
-        <legend>Question 1</legend>
-        <label for="q1"><strong>Fill in the blank:</strong> The system that translates domain names into server addresses is called <span class="pill">_____</span>.</label>
-        <input type="text" id="q1" name="q1" class="text-answer" placeholder="Type your answer here">
-      </fieldset>
-
-      <fieldset class="quiz-fieldset">
-        <legend>Question 2</legend>
-        <p><strong>Which HTTP version introduced persistent connections?</strong></p>
-        <div class="choice-list">
-          <label><input type="radio" name="q2" value="HTTP/0.9"> HTTP/0.9</label>
-          <label><input type="radio" name="q2" value="HTTP/1.0"> HTTP/1.0</label>
-          <label><input type="radio" name="q2" value="HTTP/1.1"> HTTP/1.1</label>
-          <label><input type="radio" name="q2" value="HTTP/3"> HTTP/3</label>
-        </div>
-      </fieldset>
-
-      <fieldset class="quiz-fieldset">
-        <legend>Question 3</legend>
-        <p><strong>Which version of HTTP is known for multiplexing and a binary format?</strong></p>
-        <div class="choice-list">
-          <label><input type="radio" name="q3" value="HTTP/1.0"> HTTP/1.0</label>
-          <label><input type="radio" name="q3" value="HTTP/1.1"> HTTP/1.1</label>
-          <label><input type="radio" name="q3" value="HTTP/2"> HTTP/2</label>
-          <label><input type="radio" name="q3" value="HTTP/3"> HTTP/3</label>
-        </div>
-      </fieldset>
-
-      <fieldset class="quiz-fieldset">
-        <legend>Question 4</legend>
-        <p><strong>What does a 404 status code usually mean?</strong></p>
-        <div class="choice-list">
-          <label><input type="radio" name="q4" value="The request was successful"> The request was successful</label>
-          <label><input type="radio" name="q4" value="The browser is being redirected permanently"> The browser is being redirected permanently</label>
-          <label><input type="radio" name="q4" value="The requested resource could not be found"> The requested resource could not be found</label>
-          <label><input type="radio" name="q4" value="The server is using HTTPS"> The server is using HTTPS</label>
-        </div>
-      </fieldset>
-
-      <fieldset class="quiz-fieldset">
-        <legend>Question 5</legend>
-        <p><strong>Which web server software is especially known for speed, scalability, and an event-driven design?</strong></p>
-        <div class="choice-list">
-          <label><input type="radio" name="q5" value="Apache"> Apache</label>
-          <label><input type="radio" name="q5" value="Nginx"> Nginx</label>
-          <label><input type="radio" name="q5" value="IIS"> IIS</label>
-          <label><input type="radio" name="q5" value="DNS"> DNS</label>
-        </div>
-      </fieldset>
-
-      <fieldset class="quiz-fieldset">
-        <legend>Question 6</legend>
-        <p><strong>Select every task that modern web servers commonly handle.</strong></p>
-        <div class="choice-list">
-          <label><input type="checkbox" name="q6" value="Serve HTML, CSS, images, and other files"> Serve HTML, CSS, images, and other files</label>
-          <label><input type="checkbox" name="q6" value="Manage encrypted HTTPS connections"> Manage encrypted HTTPS connections</label>
-          <label><input type="checkbox" name="q6" value="Work with back end systems such as APIs and databases"> Work with back end systems such as APIs and databases</label>
-          <label><input type="checkbox" name="q6" value="Translate spoken language into sign language"> Translate spoken language into sign language</label>
-          <label><input type="checkbox" name="q6" value="Physically repair broken computer screens"> Physically repair broken computer screens</label>
-        </div>
-      </fieldset>
-
-      <div class="quiz-actions">
-        <button type="submit" class="button-primary">Submit Quiz</button>
-        <button type="button" id="reset-quiz" class="button-secondary">Retake / Reset Quiz</button>
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Core web communication terms</h2>
+        <p>These terms appear across almost every page in the site.</p>
       </div>
-    </form>
-<!-- Results are filled in by JavaScript after submission -->
-    <!-- This results block starts hidden on purpose, then the script reveals it after the quiz is graded. -->
-	
-    <section id="quiz-results" class="quiz-results" aria-live="polite" hidden>
-      <div id="result-summary" class="result-summary"></div>
-      <div id="result-details" class="result-details"></div>
+      <div class="cards-grid">
+        <article class="definition-card">
+          <h2>1. Web Server</h2>
+          <p>A web server is either the machine or the software that stores resources and returns them to clients.</p>
+        </article>
+        <article class="definition-card">
+          <h2>2. HTTP</h2>
+          <p>HTTP is the protocol used for communication between a client, such as a browser, and a server.</p>
+        </article>
+        <article class="definition-card">
+          <h2>3. HTTPS</h2>
+          <p>HTTPS is the secure version of HTTP and uses TLS encryption to protect data in transit.</p>
+        </article>
+        <article class="definition-card">
+          <h2>4. DNS</h2>
+          <p>DNS translates human-friendly domain names into IP addresses that computers can route to.</p>
+        </article>
+        <article class="definition-card">
+          <h2>5. Request</h2>
+          <p>A request is the message the client sends when it wants a resource or wants the server to perform an action.</p>
+        </article>
+        <article class="definition-card">
+          <h2>6. Response</h2>
+          <p>A response is the server's reply, including a status code, headers, and often a body with content.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Performance, security, and delivery terms</h2>
+        <p>These help explain why the modern web feels fast and secure.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="definition-card">
+          <h2>7. Status Code</h2>
+          <p>A numeric result that tells the browser whether a request succeeded, redirected, or failed.</p>
+        </article>
+        <article class="definition-card">
+          <h2>8. Caching</h2>
+          <p>Caching stores previously fetched content so it can be reused instead of downloaded again.</p>
+        </article>
+        <article class="definition-card">
+          <h2>9. Latency</h2>
+          <p>Latency is the delay between sending a request and beginning to receive the response.</p>
+        </article>
+        <article class="definition-card">
+          <h2>10. TLS</h2>
+          <p>TLS is the encryption protocol commonly used to secure HTTPS connections.</p>
+        </article>
+        <article class="definition-card">
+          <h2>11. Reverse Proxy</h2>
+          <p>A reverse proxy sits in front of back end services and forwards requests to the right destination.</p>
+        </article>
+        <article class="definition-card">
+          <h2>12. CDN</h2>
+          <p>A content delivery network stores copies of assets in multiple locations so users can fetch them from a closer server.</p>
+        </article>
+      </div>
+    </section>
+
+
+
+    <section class="page-section">
+      <div class="section-heading">
+        <h2>Server architecture terms</h2>
+        <p>These terms help explain how bigger websites stay organized and available.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="definition-card">
+          <h2>13. Load Balancer</h2>
+          <p>A load balancer spreads traffic across more than one server so one machine does not have to handle everything alone.</p>
+        </article>
+        <article class="definition-card">
+          <h2>14. API</h2>
+          <p>An API is a way for different programs to request and share data, often through HTTP requests.</p>
+        </article>
+        <article class="definition-card">
+          <h2>15. Static Content</h2>
+          <p>Static content is served as a ready-made file, such as an image, stylesheet, or simple HTML page.</p>
+        </article>
+        <article class="definition-card">
+          <h2>16. Dynamic Content</h2>
+          <p>Dynamic content is generated at request time, often by an app, script, database, or API.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- This table turns the glossary into a study guide by explaining why each idea matters. -->
+    <section class="page-section table-wrap">
+      <table>
+        <caption>Why each concept matters</caption>
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Web Server</td>
+            <td>Without a server, there is nowhere for website content to be stored and delivered from.</td>
+          </tr>
+          <tr>
+            <td>HTTP and HTTPS</td>
+            <td>These define how data moves and whether that communication is protected in transit.</td>
+          </tr>
+          <tr>
+            <td>DNS</td>
+            <td>DNS makes the web human-friendly by letting people type names instead of raw numeric addresses.</td>
+          </tr>
+          <tr>
+            <td>Request and Response</td>
+            <td>These two message types are the core cycle of web communication.</td>
+          </tr>
+          <tr>
+            <td>Status Code</td>
+            <td>Status codes help both browsers and developers quickly understand what happened.</td>
+          </tr>
+          <tr>
+            <td>Caching and CDN</td>
+            <td>These reduce repeated downloads and can move content closer to the user.</td>
+          </tr>
+          <tr>
+            <td>Latency and TLS</td>
+            <td>These strongly affect real-world speed and security.</td>
+          </tr>
+          <tr>
+            <td>Reverse Proxy</td>
+            <td>This helps scale, secure, and organize more complex web applications.</td>
+          </tr>
+          <tr>
+            <td>Load Balancer</td>
+            <td>This helps larger sites share traffic across multiple servers instead of relying on one system.</td>
+          </tr>
+          <tr>
+            <td>API</td>
+            <td>APIs explain how web apps request data and connect the front end to back end services.</td>
+          </tr>
+          <tr>
+            <td>Static and Dynamic Content</td>
+            <td>These explain the difference between files that are served directly and content created when a request happens.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-section callout">
+      <h2>Study tip</h2>
+      <p>If you can explain the difference between DNS, HTTP, a status code, a reverse proxy, caching, and dynamic content in your own words, you already understand a big part of how the web works behind the scenes.</p>
     </section>
   </main>
 
- <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
+  <!-- The footer repeats key links and the class project note so that info stays easy to find on every page. -->
   <footer class="page-footer">
     <div class="footer-inner">
       <p><strong>Web Servers and HTTP</strong> class project site.</p>
@@ -177,6 +215,5 @@
       </div>
     </div>
   </footer>
-  <script src="quiz.js"></script>
 </body>
 </html>
